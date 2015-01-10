@@ -1,0 +1,9 @@
+.sprite(@width, @height, @x, @y, @display:block){
+	background: url(../images/sprite.png) no-repeat (@x * -1px) (@y * -1px);
+	display: @display;
+	width: (@width * 1px);
+	height: (@height * 1px);
+}
+#sprite{
+	.telefone{ .sprite(23,36,45,5); }
+}
