@@ -9,8 +9,117 @@
 
 @width: 968px;
 @raio: 10px;
+@padding: 24px;
 
 // MIXINS ESPECÍFICOS
 
 
 // LAYOUT
+body{
+	background: @background;
+	font: normal 24px/36px @corpo;
+}
+#header-container, #top-bar{
+	.container;
+	background: @basecolor;
+	height: 72px;
+	z-index: 1;
+
+	header, nav{
+		float: left;
+	}
+}
+#header-container{
+	.logo{
+		margin: @padding @padding*2 @padding @padding;
+	}
+}
+#top-bar{
+	display: none;
+}
+
+nav{
+	.global{
+		.clearfix;
+		
+		li{
+			float: left;
+			position: relative;
+
+			&:hover a{
+				background: @background;
+				color: @basecolor;
+			}
+		}
+		a{
+			.anima;
+			color: @link;
+			display: block;
+			font: normal 21px/48px @titulo;
+			padding: 14px @padding 10px;
+		}
+	}
+	.secondary{
+		background: @background;
+		display: none;
+		padding: @padding/2 0;
+		position: absolute;
+		top: 100%;
+		left: 0;
+
+		li{
+			float: none;
+
+			&:hover a{
+				background: @highlight;
+				color: @basecolor;
+			}
+		}
+		a{
+			color: @texto;
+			display: block;
+			font: normal 16px/48px @corpo;
+			padding: 0 @padding;
+			white-space: nowrap;
+		}
+
+		&.active{
+			display: block;
+		}
+	}
+}
+
+#content-container{
+	padding-bottom: 50px;
+
+	section.text{
+		.content;
+
+		p{
+			line-height: 1.4em;
+		}
+		p+p{
+			margin-top: @padding;
+		}
+	}
+}
+
+#cover-image{
+	.container;
+	background: url(../images/background-image.jpg) no-repeat center;
+	background-size: cover;
+	height: 640px;
+	margin-bottom: 60px;
+
+	p.slogan{
+		color: @texto-branco;
+		font: normal 120px/132px @titulo;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: @width;
+	}
+}
