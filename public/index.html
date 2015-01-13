@@ -6,10 +6,10 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/styles/main.css">
+	<!-- <link rel="stylesheet" href="/styles/main.css"> -->
 
 	<!-- JavaScript -->
-	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-1.11.2.min.js"></script>
 	<script src="js/nav.js"></script>
 
 	<!-- ARQUIVOS DO LESS - APAGAR -->
@@ -23,48 +23,58 @@
 			less.watch();
 		});
 	</script>
-	<script src="js/less-1.7.3.min.js"></script>
+	<script src="js/less.min.js"></script>
 	<!-- FIM ARQUIVOS LESS -->
 <body>
 	
 	<div id="page-container">
 		<div id="header-container">
 			<header><img src="images/logo.png" alt="" class="logo"></header>
-			<nav>
-				<ul class="global">
-					<li><a href="">Work</a></li>
-					<li><a href="">About</a></li>
-					<li><a href="">Careers</a>
-						<ul class="secondary">
-							<li><a href="">Client Services</a></li>
-							<li><a href="">Creative</a></li>
-							<li><a href="">Motion & Media</a></li>
-							<li><a href="">Operations</a></li>
-							<li><a href="">People</a></li>
-							<li><a href="">Strategy</a></li>
-							<li><a href="">Technology</a></li>
-							<li><a href="">UX & Product Design</a></li>
+			<span class="open-menu-button"></span>
+			<div class="wrap">
+				<div class="scroll">
+					<nav>
+						<ul class="global">
+							<li><a href="">Work</a></li>
+							<li><a href="">About</a></li>
+							<li class="has-submenu"><a href="">Careers</a>
+								<ul class="secondary">
+									<li><a href="">Client Services</a></li>
+									<li><a href="">Creative</a></li>
+									<li><a href="">Motion & Media</a></li>
+									<li><a href="">Operations</a></li>
+									<li><a href="">People</a></li>
+									<li><a href="">Strategy</a></li>
+									<li><a href="">Technology</a></li>
+									<li><a href="">UX & Product Design</a></li>
+								</ul>
+							</li>
+							<li><a href="">Ideas</a></li>
+							<li><a href="">News</a></li>
+							<li><a href="">Events</a></li>
+							<li><a href="">Contact</a></li>
 						</ul>
-					</li>
-					<li><a href="">Ideas</a></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Events</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-			</nav>
+					</nav>
+
+					<p class="copyright">&copy 2014 Huge. All Rights Reserved.</p>
+				</div>
+			</div>
 		</div>
 		<div id="content-container">
-			<div id="top-bar">
-				<span class="open-menu-button"></span>
+			<!-- <div id="top-bar">
+				
+			</div> -->
+			<div id="content">
+				<div id="image-container">
+					<div class="image"></div>
+					<h1>Get paid for giving a shit.</h1>
+				</div>
+				<section class="text">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni atque, quisquam, nesciunt consequuntur quam incidunt! Vitae corrupti deserunt beatae nisi libero amet, deleniti aliquid reiciendis eaque voluptatum, magni, reprehenderit in.</p>
+					<p>Expedita perspiciatis architecto alias sint odio libero, aliquid officiis rem modi quod doloribus sunt hic, ducimus accusamus. Vero placeat blanditiis tempore enim sit, eveniet sequi quam reprehenderit incidunt in eaque!</p>
+					<p>Beatae est necessitatibus magni. Hic quam itaque ut, optio corrupti, eum obcaecati eaque error tempora fugiat eveniet fuga architecto officiis quibusdam veritatis dignissimos pariatur aliquam praesentium rem, quo. Eveniet, quam?</p>
+				</section>
 			</div>
-			<div id="cover-image">
-				<p class="slogan">Get paid for giving a shit.</p>
-			</div>
-			<section class="text">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni atque, quisquam, nesciunt consequuntur quam incidunt! Vitae corrupti deserunt beatae nisi libero amet, deleniti aliquid reiciendis eaque voluptatum, magni, reprehenderit in.</p>
-				<p>Expedita perspiciatis architecto alias sint odio libero, aliquid officiis rem modi quod doloribus sunt hic, ducimus accusamus. Vero placeat blanditiis tempore enim sit, eveniet sequi quam reprehenderit incidunt in eaque!</p>
-				<p>Beatae est necessitatibus magni. Hic quam itaque ut, optio corrupti, eum obcaecati eaque error tempora fugiat eveniet fuga architecto officiis quibusdam veritatis dignissimos pariatur aliquam praesentium rem, quo. Eveniet, quam?</p>
-			</section>
 		</div>
 	</div>
 
