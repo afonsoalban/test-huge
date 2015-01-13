@@ -19,107 +19,81 @@ body{
 	background: @background;
 	font: normal 24px/36px @corpo;
 }
-#header-container, #top-bar{
-	.container;
-	background: @basecolor;
-	height: 72px;
-	z-index: 1;
 
-	header, nav{
-		float: left;
-	}
-}
 #header-container{
-	.logo{
-		margin: @padding @padding*2 @padding @padding;
+	.container;
+	z-index: 99;
+
+	.copyright{
+		display: none;
+		font: normal 12px/16px @extra;
+		padding: 16px @padding;
+	}
+
+	.open-menu-button{
+		.anima;
+		#sprite .abreMenu;
+		cursor: pointer;
 	}
 }
-#top-bar{
-	display: none;
+
+#page-container.open-menu .open-menu-button{
+	#sprite .fechaMenu;
 }
 
 nav{
-	.global{
-		.clearfix;
-		
-		li{
-			float: left;
-			position: relative;
-
-			&:hover a{
-				background: @background;
-				color: @basecolor;
-			}
-		}
-		a{
-			.anima;
-			color: @link;
-			display: block;
-			font: normal 21px/48px @titulo;
-			padding: 14px @padding 10px;
-		}
-	}
 	.secondary{
-		background: @background;
 		display: none;
-		padding: @padding/2 0;
-		position: absolute;
-		top: 100%;
-		left: 0;
-
-		li{
-			float: none;
-
-			&:hover a{
-				background: @highlight;
-				color: @basecolor;
-			}
-		}
-		a{
-			color: @texto;
-			display: block;
-			font: normal 16px/48px @corpo;
-			padding: 0 @padding;
-			white-space: nowrap;
-		}
-
-		&.active{
-			display: block;
-		}
+	}
+	.has-submenu.open .secondary{
+		//height: auto;
 	}
 }
 
 #content-container{
-	padding-bottom: 50px;
+	&::after{
+		background: @t-black;
+		content: '';
+		display: block;
+		opacity: 0;
+		position: fixed;
+		width: 0;
+		height: 0;
+		top: 0;
+		left: 0;
+		-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	}
+}
+#page-container.open-menu #content-container::after{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
 
-	section.text{
-		.content;
+#content{
+	padding-bottom: 40px;
 
-		p{
-			line-height: 1.4em;
-		}
-		p+p{
-			margin-top: @padding;
-		}
+	section.text p+p{
+		margin-top: 1.2em;
 	}
 }
 
-#cover-image{
+#image-container{
 	.container;
-	background: url(../images/background-image.jpg) no-repeat center;
-	background-size: cover;
-	height: 640px;
-	margin-bottom: 60px;
 
-	p.slogan{
-		color: @texto-branco;
-		font: normal 120px/132px @titulo;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		-webkit-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-		text-align: center;
-		width: @width;
+	.image{
+		background: url(../images/background-image.jpg) no-repeat center;
+		background-size: cover;
 	}
+	
+}
+
+@media screen and (min-width: 768px){
+	@import 'desktop';
+}
+@media screen and (max-width: 768px){
+	@import 'mobile';
 }
